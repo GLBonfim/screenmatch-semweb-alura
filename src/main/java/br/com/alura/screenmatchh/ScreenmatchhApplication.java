@@ -1,12 +1,17 @@
 package br.com.alura.screenmatchh;
 
 
+import br.com.alura.screenmatchh.model.DadosEpisodio;
 import br.com.alura.screenmatchh.model.DadosSerie;
+import br.com.alura.screenmatchh.model.DadosTemporada;
 import br.com.alura.screenmatchh.service.ConsumoAPI;
 import br.com.alura.screenmatchh.service.ConverteDados;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @SpringBootApplication
 public class ScreenmatchhApplication implements CommandLineRunner {
@@ -16,7 +21,7 @@ public class ScreenmatchhApplication implements CommandLineRunner {
 	}
 
 	@Override
-	public void run(String... args) throws Exception {
+	public void run(String... args) {
 		var consumoApi = new ConsumoAPI();
 		var json = consumoApi.obterDados("https://www.omdbapi.com/?t=The+100=&apikey=e3bdf48d");
 		System.out.println(json);
